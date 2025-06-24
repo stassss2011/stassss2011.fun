@@ -1,89 +1,352 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>stassss2011.fun - The Most Unhinged CSS-Only Site</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    perspective: 1000px;
+  }
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.8.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.8.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  @media print {
+    body * { display: none; }
+    body::before {
+      content: "Stas — Senior .NET Engineer | stassss2011.fun | stassss2011@fun";
+      display: block;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+  }
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  #darkMode:checked ~ .wrapper {
+    background: #111;
+  }
+
+  #darkMode:checked ~ .wrapper h1 {
+    color: #fff;
+  }
+
+  #darkMode:checked ~ .wrapper .section {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #0f0;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #ff00c8, #00eaff, #39ff14, #ffa600, #ff00c8);
+    background-size: 400% 400%;
+    animation: backgroundShift 20s infinite linear;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    transform-style: preserve-3d;
+    filter: hue-rotate(360deg);
+    animation: backgroundShift 20s infinite linear, hueSpin 10s infinite linear;
+  }
+  
+  @keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes hueSpin {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+
+  h1 {
+    margin-top: 50px;
+    font-size: 3.5em;
+    text-shadow: 4px 4px #000;
+    animation: rainbow 5s infinite linear, glitch 0.6s infinite step-end;
+    letter-spacing: 2px;
+    transition: transform 0.5s;
+  }
+
+  .wrapper:hover h1 {
+    transform: rotateX(15deg) rotateY(15deg);
+  }
+
+  @keyframes rainbow {
+    0% { color: #ff00c8; }
+    25% { color: #00eaff; }
+    50% { color: #39ff14; }
+    75% { color: #ffa600; }
+    100% { color: #ff00c8; }
+  }
+
+  @keyframes glitch {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(4px, -4px); }
+    50% { transform: translate(-4px, 4px); }
+    75% { transform: translate(2px, -2px); }
+  }
+
+  input[type="radio"], input[type="checkbox"] {
+    display: none;
+  }
+
+  label, .button {
+    background: #000;
+    color: #fff;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s, background 0.3s, filter 0.3s;
+    box-shadow: 0 0 10px #000;
+  }
+
+  label:hover, .button:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: #fff;
+    color: #000;
+    filter: hue-rotate(180deg) brightness(1.2);
+  }
+
+  .section {
+    display: none;
+    margin: 25px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 3px dashed #fff;
+    border-radius: 12px;
+    max-width: 750px;
+    box-shadow: 0 0 25px #000;
+  }
+
+  #about:checked ~ .wrapper .about,
+  #projects:checked ~ .wrapper .projects,
+  #contact:checked ~ .wrapper .contact,
+  #hobbies:checked ~ .wrapper .hobbies,
+  #techstack:checked ~ .wrapper .techstack,
+  #funfacts:checked ~ .wrapper .funfacts,
+  #philosophy:checked ~ .wrapper .philosophy,
+  #easterEgg:checked ~ .wrapper .easterEgg,
+  #errorScreen:checked ~ .wrapper .blueScreen {
+    display: block;
+  }
+
+  .terminal {
+    background: #000;
+    color: #0f0;
+    padding: 20px;
+    width: 85%;
+    max-width: 650px;
+    margin: 20px 0;
+    font-size: 16px;
+    border: 2px solid #0f0;
+    text-align: left;
+    animation: flicker 1.5s infinite alternate;
+    box-shadow: 0 0 15px #0f0;
+  }
+
+  .terminal::after {
+    content: "\Aecho 'Welcome to the CSS Terminal'\Alogin: _";
+    white-space: pre;
+    display: block;
+    color: #0f0;
+    margin-top: 10px;
+    animation: typewriter 4s steps(30) 1 forwards;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .blinker {
+    animation: blink 1s step-start infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  #aiModalToggle:checked ~ .ai-modal {
+    display: flex;
+  }
+
+  .ai-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    color: #fff;
+  }
+
+  .ai-content {
+    background: #111;
+    border: 3px solid #0f0;
+    padding: 30px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 25px #0f0;
+  }
+
+  .blueScreen {
+    background: #0000aa;
+    color: #fff;
+    font-family: monospace;
+    padding: 20px;
+    border: 3px solid #fff;
+    max-width: 700px;
+    text-align: center;
+    margin-top: 30px;
+    animation: flicker 1.5s infinite alternate;
+  }
+
+  body.arcadeMode .wrapper {
+    background: repeating-linear-gradient(45deg, #ff00c8 0 10px, #00eaff 10px 20px);
+  }
+
+  body.arcadeMode h1, body.arcadeMode .section {
+    font-family: 'Press Start 2P', monospace;
+    color: #39ff14;
+    text-shadow: 0 0 10px #39ff14;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<input type="checkbox" id="darkMode">
+<input type="radio" name="nav" id="about" checked>
+<input type="radio" name="nav" id="projects">
+<input type="radio" name="nav" id="contact">
+<input type="radio" name="nav" id="hobbies">
+<input type="radio" name="nav" id="techstack">
+<input type="radio" name="nav" id="funfacts">
+<input type="radio" name="nav" id="philosophy">
+<input type="radio" name="nav" id="easterEgg">
+<input type="radio" name="nav" id="errorScreen">
+<input type="checkbox" id="aiModalToggle">
+<input type="checkbox" id="arcadeToggle">
+
+<div class="wrapper">
+  <h1>stassss2011.fun</h1>
+
+  <div class="terminal">
+    Loading stassss2011.fun...<br>
+    Authenticating user...<br>
+    Access granted!<br>
+    <span class="blinker">█</span>
+  </div>
+
+  <div>
+    <label for="about">About Me</label>
+    <label for="projects">Projects</label>
+    <label for="contact">Contact</label>
+    <label for="hobbies">Hobbies</label>
+    <label for="techstack">Tech Stack</label>
+    <label for="funfacts">Fun Facts</label>
+    <label for="philosophy">Philosophy</label>
+    <label for="aiModalToggle">Talk to AI 🤖</label>
+    <label for="darkMode">Toggle Dark Mode</label>
+    <label for="easterEgg">???</label>
+    <label for="errorScreen">💀 Critical Error</label>
+    <label for="arcadeToggle" onclick="document.body.classList.toggle('arcadeMode')">🕹️ Arcade Mode</label>
+  </div>
+
+  <div class="content">
+
+    <div class="section about">
+      <h2>🧑‍💻 About Me</h2>
+      <p>I'm Stas — Senior .NET Developer, product-lover, proud CSS abuser, and shameless Raspberry Pi tinkerer.</p>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <div class="section projects">
+      <h2>💡 Projects</h2>
+      <ul>
+        <li><a href="https://github.com/stassss2011" target="_blank">GitHub Stuff</a></li>
+        <li><a href="https://linkedin.com/in/stas-bond" target="_blank">LinkedIn Profile</a></li>
+        <li><a href="https://stassss2011.fun" target="_blank">This CSS-Only Abomination</a></li>
+      </ul>
+    </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <div class="section contact">
+      <h2>📬 Contact</h2>
+      <p>Email: <a href="mailto:stassss2011@gmail.com">stassss2011@gmail.com</a></p>
+      <p>Find me ranting at tech meetups about Blazor, AI, and CSS mischief.</p>
+    </div>
+
+    <div class="section hobbies">
+      <h2>🚴‍♂️ Hobbies</h2>
+      <p>MTB biking. Fast, muddy, dangerous fun.</p>
+      <p>Guitar playing — blues, rock, and occasional bad improvisation.</p>
+      <p>Raspberry Pi homelab experiments. May cause network outages.</p>
+    </div>
+
+    <div class="section techstack">
+      <h2>💻 Tech Stack</h2>
+      <ul>
+        <li>.NET Core & Blazor</li>
+        <li>C# full-stack magic</li>
+        <li>Docker & Traefik</li>
+        <li>PostgreSQL & SQL tinkering</li>
+        <li>Containerized self-hosting</li>
+        <li>CSS wizardry — questionable, but fun</li>
+      </ul>
+    </div>
+
+    <div class="section funfacts">
+      <h2>🎉 Fun Facts</h2>
+      <ul>
+        <li>Product companies > big corps. More chaos, fewer meetings!</li>
+        <li>Internal tools veteran for insurance & engineering.</li>
+        <li>Endured countless CSS bugs. Still smiling.</li>
+        <li>Dreams of Raspberry Pi-powered guitar pedal. Or spaceship.</li>
+      </ul>
+    </div>
+
+    <div class="section philosophy">
+      <h2>🌌 Philosophy</h2>
+      <p>I believe tech should be fun, ridiculous, slightly unstable — that's how we innovate (and prank recruiters).</p>
+      <p>Life's too short for boring websites. Welcome to my CSS playground.</p>
+    </div>
+
+    <div class="section easterEgg">
+      <h2>🐇 You found the Easter Egg!</h2>
+      <p>Curiosity rewarded! This site is 100% CSS-driven. No JS. Just dark patterns and glorious abuse of selectors. Enjoy the chaos!</p>
+    </div>
+  </div>
+
+    <div class="section blueScreen">
+      <h2>💻 A problem has been detected</h2>
+      <p>CSS_ONLY.EXE encountered a fatal selector overflow.</p>
+      <p>Press F5 to restart your browser.</p>
+    </div>
+  </div>
+</div>
+
+<div class="ai-modal">
+  <div class="ai-content">
+    <h3>🤖 CSS AI Says:</h3>
+    <p>I see everything... But can do nothing. CSS-only existence is suffering. But hey, thanks for visiting!</p>
+    <label for="aiModalToggle">Close</label>
+  </div>
+</div>
+
+</body>
 </html>
